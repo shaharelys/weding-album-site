@@ -186,6 +186,7 @@ const HomeLink = styled(Link)`
 `;
 
 const SuccessPage = () => {
+  // eslint-disable-next-line no-unused-vars
   const { t } = useTranslation();
   
   return (

@@ -9,7 +9,6 @@ import AlbumSelection from '../components/Form/AlbumSelection';
 import PricingSection from '../components/Form/PricingSection';
 import GoogleReviewsSection from '../components/Reviews/GoogleReviewsSection';
 import PurchaseIntentModal from '../components/Modal/PurchaseIntentModal';
-import { EmotionalPhoto } from '../utils/ImagePlaceholders';
 
 const HeroSection = styled.div`
   background-color: #f8f4f0;
@@ -110,18 +109,6 @@ const CTAButton = styled.button`
   }
 `;
 
-const VideoFallback = styled.div`
-  width: 100%;
-  height: 300px;
-  background-color: #e0e0e0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #666;
-  font-size: 18px;
-`;
-
-// Keeping existing styled components for the other sections
 const StorySection = styled.div`
   background-color: #f5f0e8;
   padding: 70px 0;
@@ -214,11 +201,6 @@ const SectionTitle = styled.h2`
   color: #333;
 `;
 
-const StepsContainer = styled.div`
-  max-width: 900px;
-  margin: 60px auto 0;
-`;
-
 const FinalCTAContainer = styled(StoryContainer)`
   /* You can add any Final CTA specific styling overrides here if needed */
 `;
@@ -233,10 +215,6 @@ const FinalCTAImageContainer = styled(StoryImageContainer)`
 
 const FinalCTAHeading = styled(StoryHeading)`
   /* You can add any Final CTA specific heading styling here */
-`;
-
-const FinalCTAText = styled(StoryText)`
-  /* You can add any Final CTA specific text styling here */
 `;
 
 const FinalCTASection = styled.div`
@@ -354,6 +332,7 @@ const OverlayModal = styled.div`
 
 const HomePage = () => {
   const { t } = useTranslation();
+  // eslint-disable-next-line no-unused-vars
   const navigate = useNavigate();
   const [step, setStep] = useState('selection');
   const [formData, setFormData] = useState({});
