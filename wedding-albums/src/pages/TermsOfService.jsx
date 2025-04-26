@@ -23,7 +23,7 @@ const SectionTitle = styled.h2`
 `;
 
 const TermsOfService = () => {
-  const { t } = useTranslation();
+  const { } = useTranslation(); // Remove unused t variable
 
   return (
     <Container>

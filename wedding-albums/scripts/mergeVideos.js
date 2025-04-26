@@ -6,70 +6,55 @@
  * wedding-albums project.
  */
 
-const { spawn } = require('child_process');
+const { execSync } = require('child_process');
 const path = require('path');
 const fs = require('fs');
 
-// Path to the ffmpeg executable (from ffmpeg-static package)
-let ffmpegPath;
-try {
-  ffmpegPath = require('ffmpeg-static');
-} catch (err) {
-  console.error('Please install ffmpeg-static package: npm install ffmpeg-static --save-dev');
-  process.exit(1);
-}
+// Define the paths
+const projectRoot = path.resolve(__dirname, '..');
+const videosDir = path.join(projectRoot, 'public', 'images', 'Video Premium Album_files');
+const outputFile = path.join(videosDir, 'combined_hero_video.mp4');
 
-// Configure paths
-const publicDir = path.join(__dirname, '../public');
-const inputDir = path.join(publicDir, 'images/Video Premium Album_files');
-const outputDir = path.join(inputDir);
-
-// Video files to concatenate
-const videos = [
-  path.join(inputDir, 'Nostalgic Wedding Album.mp4'),
-  path.join(inputDir, 'couple.mp4')
+// List of videos to merge - include the new happy_couple_balcony.mp4
+const videoFiles = [
+  'Nostalgic Wedding Album.mp4',
+  'couple.mp4',
+  'happy_couple_balcony.mp4',
+  'video_men.mp4'
 ];
 
-// Output file name
-const outputFile = path.join(outputDir, 'combined_hero_video.mp4');
-
-// Create a temporary file list for FFmpeg
+// Create a temporary file with the list of videos
 const tempFilePath = path.join(__dirname, 'temp_file_list.txt');
-const fileContent = videos.map(video => `file '${video}'`).join('\n');
+let fileContent = '';
 
-fs.writeFileSync(tempFilePath, fileContent);
-
-console.log('Starting video merge process...');
-console.log(`Input videos: ${videos.join(', ')}`);
-console.log(`Output video: ${outputFile}`);
-
-// Execute FFmpeg command to concatenate videos
-const ffmpeg = spawn(ffmpegPath, [
-  '-f', 'concat',
-  '-safe', '0',
-  '-i', tempFilePath,
-  '-c', 'copy',
-  '-y', // Overwrite output file if it exists
-  outputFile
-]);
-
-// Handle FFmpeg process events
-ffmpeg.stdout.on('data', data => {
-  console.log(`stdout: ${data}`);
-});
-
-ffmpeg.stderr.on('data', data => {
-  console.error(`${data}`);
-});
-
-ffmpeg.on('close', code => {
-  // Clean up the temporary file
-  fs.unlinkSync(tempFilePath);
-  
-  if (code === 0) {
-    console.log(`Success! Videos have been merged into: ${outputFile}`);
-    console.log('You can now update your code to use this single video file.');
+// Check if the videos exist and create the file content
+videoFiles.forEach(video => {
+  const videoPath = path.join(videosDir, video);
+  if (fs.existsSync(videoPath)) {
+    fileContent += `file '${videoPath}'\n`;
   } else {
-    console.error(`FFmpeg process exited with code ${code}`);
+    console.error(`Warning: Video file not found: ${videoPath}`);
   }
 });
+
+// Write the file list
+fs.writeFileSync(tempFilePath, fileContent);
+
+console.log('Merging videos...');
+console.log('Files to merge:', fileContent);
+
+try {
+  // Run FFmpeg command to concatenate the videos
+  const command = `ffmpeg -y -f concat -safe 0 -i "${tempFilePath}" -c:v copy -c:a aac "${outputFile}"`;
+  console.log(`Executing command: ${command}`);
+  execSync(command, { stdio: 'inherit' });
+  console.log(`Videos successfully merged to ${outputFile}`);
+} catch (error) {
+  console.error('Error during video merging:', error);
+} finally {
+  // Clean up the temporary file
+  if (fs.existsSync(tempFilePath)) {
+    fs.unlinkSync(tempFilePath);
+    console.log('Temporary file list removed');
+  }
+}

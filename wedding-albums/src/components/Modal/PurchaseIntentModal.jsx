@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import styled, { keyframes } from 'styled-components';
-import { useTranslation } from 'react-i18next';
 
 // Animation for modal entry
 const fadeIn = keyframes`
@@ -175,7 +174,6 @@ const SuccessMessage = styled.div`
 `;
 
 const PurchaseIntentModal = ({ email = '', onJoinWaitlist, onClose }) => {
-  const { t } = useTranslation();
   const [waitlistEmail, setWaitlistEmail] = useState(email);
   const [error, setError] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);

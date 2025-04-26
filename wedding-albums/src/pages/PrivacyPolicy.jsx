@@ -23,7 +23,7 @@ const SectionTitle = styled.h2`
 `;
 
 const PrivacyPolicy = () => {
-  const { t } = useTranslation();
+  const { } = useTranslation(); // Remove unused t variable
 
   return (
     <Container>
