@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "install": "cd wedding-albums && npm install",
-    "build": "cd wedding-albums && npm run build",
+    "build": "cd wedding-albums && npm install && npm run build",
     "start": "cd wedding-albums && npm start"
+  },
+  "devDependencies": {
+    "ffmpeg-static": "^5.2.0"
   }
 }

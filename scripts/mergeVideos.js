@@ -13,8 +13,10 @@ const fs = require('fs');
 // Path to the ffmpeg executable (requires ffmpeg to be installed on your system)
 const ffmpegPath = 'ffmpeg';
 
-// Configure paths - fixed to match the correct project structure
-const publicDir = path.join(__dirname, '../public');
+// Configure paths - updated to work in both local and Vercel environments
+const projectRoot = path.join(__dirname, '..');
+const weddingAlbumsDir = path.join(projectRoot, 'wedding-albums');
+const publicDir = path.join(weddingAlbumsDir, 'public');
 const inputDir = path.join(publicDir, 'images/Video Premium Album_files');
 const outputDir = path.join(inputDir);
 

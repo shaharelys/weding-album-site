@@ -1,5 +1,5 @@
 {
-  "rewrites": [{ "source": "/(.*)", "destination": "/wedding-albums/$1" }],
-  "buildCommand": "cd wedding-albums && npm run build",
+  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }],
+  "buildCommand": "npm run build",
   "outputDirectory": "wedding-albums/build"
 }
