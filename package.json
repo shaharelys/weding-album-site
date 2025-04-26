@@ -1,0 +1,10 @@
+{
+  "name": "wedding-albums-project",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "install": "cd wedding-albums && npm install",
+    "build": "cd wedding-albums && npm run build",
+    "start": "cd wedding-albums && npm start"
+  }
+}

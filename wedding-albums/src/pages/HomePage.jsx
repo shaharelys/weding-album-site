@@ -219,11 +219,41 @@ const StepsContainer = styled.div`
   margin: 60px auto 0;
 `;
 
+const FinalCTAContainer = styled(StoryContainer)`
+  /* You can add any Final CTA specific styling overrides here if needed */
+`;
+
+const FinalCTAContent = styled(StoryContent)`
+  /* You can add any Final CTA specific content styling here */
+`;
+
+const FinalCTAImageContainer = styled(StoryImageContainer)`
+  /* You can add any Final CTA specific image styling here */
+`;
+
+const FinalCTAHeading = styled(StoryHeading)`
+  /* You can add any Final CTA specific heading styling here */
+`;
+
+const FinalCTAText = styled(StoryText)`
+  /* You can add any Final CTA specific text styling here */
+`;
+
 const FinalCTASection = styled.div`
-  background-color: #f8f4f0;
-  padding: 60px 0;
-  text-align: center;
+  background-color: #f5f0e8;
+  padding: 70px 0;
   direction: rtl;
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(156, 102, 68, 0.2), transparent);
+  }
 `;
 
 const ContactSection = styled.div`
@@ -399,18 +429,13 @@ const HomePage = () => {
           
           <VideoContainer>
             <VideoElement 
-              ref={videoRef}
-              autoPlay
-              muted
-              playsInline
-              loop
-              poster="/images/Story Image.jpg"
-            >
-              <source src={combinedVideoPath} type="video/mp4" />
-              <VideoFallback>
-                הסרטון לא נטען. אנא בדקו את הקובץ או את תאימות הדפדפן.
-              </VideoFallback>
-            </VideoElement>
+              ref={videoRef} 
+              src={combinedVideoPath} 
+              autoPlay 
+              muted 
+              loop 
+              playsInline 
+            />
           </VideoContainer>
         </ContentContainer>
       </HeroSection>
@@ -521,12 +546,27 @@ const HomePage = () => {
       </ContactSection>
 
       <FinalCTASection>
-        <SectionContainer>
-          <SectionTitle>{t('cta.title')}</SectionTitle>
-          <CTAButton onClick={scrollToAlbumSelection}>
-            {t('cta.button')}
-          </CTAButton>
-        </SectionContainer>
+        <FinalCTAContainer>
+          <FinalCTAContent>
+            <FinalCTAHeading>{t('cta.title')}</FinalCTAHeading>
+            <CTAButton onClick={scrollToAlbumSelection}>
+              {t('cta.button')}
+            </CTAButton>
+          </FinalCTAContent>
+          <FinalCTAImageContainer>
+            <img 
+              src="/images/black_white_open_album.png" 
+              alt="אלבום חתונה מרהיב" 
+              style={{ 
+                width: '100%', 
+                height: 'auto', 
+                maxHeight: '400px',
+                objectFit: 'cover',
+                borderRadius: '8px' 
+              }} 
+            />
+          </FinalCTAImageContainer>
+        </FinalCTAContainer>
       </FinalCTASection>
 
       {showPurchaseIntentModal && (
