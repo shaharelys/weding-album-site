@@ -93,28 +93,28 @@ const SelectButton = styled.button`
   }
 `;
 
-// Updated album data with correct Hebrew names and image paths
+// Updated album data with correct Hebrew names and English image paths
 const albums = [
   {
     id: 'basic',
     name: 'אלבום פשוט',
     description: 'אלבום בסיסי ואיכותי במחיר משתלם. מתאים לזוגות המחפשים פתרון נגיש עם שמירה על רמת איכות גבוהה.',
     basePrice: 499,
-    imagePath: '/images/תמונה אלבום פשוט.png'
+    imagePath: '/images/Plain Album Example.png'
   },
   {
     id: 'linen',
     name: 'אלבום פשתן',
     description: 'עיצוב עכשווי עם כריכת פשתן טבעית, דגש על מרחב וקומפוזיציה מינימליסטית. איכות הדפסה גבוהה במיוחד.',
     basePrice: 599,
-    imagePath: '/images/תמונה אלבום פשתן.png'
+    imagePath: '/images/Premium Linen Album Example.png'
   },
   {
     id: 'leather',
     name: 'אלבום עור',
     description: 'אלבום אלגנטי עשוי עור איכותי עם גימור מושלם. מתאים לזוגות המעדיפים מראה יוקרתי ועל-זמני.',
     basePrice: 649,
-    imagePath: '/images/תמונה אלבום עור.png'
+    imagePath: '/images/Premium Leather Album Example.png'
   }
 ];
 
