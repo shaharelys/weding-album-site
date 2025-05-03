@@ -1,6 +1,6 @@
 const translations = {
   // Header
-  'site.name': 'אלבום חתונה אוטומטי',
+  'site.name': 'Albuma',
   'site.tagline': 'הדרך הקלה אל אלבום החתונה שלכם.',
   'site.subtitle': 'שירות חדשני שמסנן עבורכם עד 5000 תמונות מהחתונה, בוחר את הרגעים היפים ביותר ומפיק מהם אלבום פיזי מעוצב.',
   'site.ctaButton': 'התחילו עכשיו – בחרו סגנון אלבום',
@@ -90,7 +90,7 @@ const translations = {
   'success.contactInfo': 'אם יש לך שאלות, אתה מוזמן ליצור קשר: 050-1234567',
   
   // Footer
-  'footer.copyright': '© 2025 אלבום חתונה אוטומטי. כל הזכויות שמורות.',
+  'footer.copyright': '© 2025 אלבומה. כל הזכויות שמורות.',
   'footer.privacy': 'מדיניות פרטיות',
   'footer.terms': 'תנאי שימוש',
   'footer.contact': 'צור קשר',

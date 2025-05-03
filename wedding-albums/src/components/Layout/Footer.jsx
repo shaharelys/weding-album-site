@@ -112,7 +112,7 @@ const Footer = () => {
       <FooterContent>
         <FooterGrid>
           <FooterSection>
-            <FooterSectionTitle>אלבום חתונה אוטומטי</FooterSectionTitle>
+            <FooterSectionTitle>אלבומה</FooterSectionTitle>
             <p>שירות חדשני המסנן את תמונות החתונה שלכם ומפיק מהן אלבום מקצועי ומרשים.</p>
             <SocialLinks>
               <SocialLink href="https://facebook.com" target="_blank" aria-label="Facebook">
@@ -141,7 +141,7 @@ const Footer = () => {
               <ContactIcon>
                 <i className="fas fa-envelope"></i>
               </ContactIcon>
-              <ContactText>{t('footer.email')}: info@wedding-albums.co.il</ContactText>
+              <ContactText>{t('footer.email')}: info@albuma.co.il</ContactText>
             </ContactItem>
             <ContactItem>
               <ContactIcon>
