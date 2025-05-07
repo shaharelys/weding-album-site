@@ -1,5 +1,24 @@
 {
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }],
-  "buildCommand": "npm run build",
-  "outputDirectory": "wedding-albums/build"
+  "version": 2,
+  "builds": [
+    {
+      "src": "wedding-albums/src/api/*.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "wedding-albums/package.json",
+      "use": "@vercel/static-build",
+      "config": { "distDir": "build" }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "wedding-albums/src/api/$1.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "wedding-albums/$1"
+    }
+  ]
 }

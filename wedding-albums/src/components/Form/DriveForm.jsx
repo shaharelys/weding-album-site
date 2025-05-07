@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
@@ -171,6 +171,7 @@ const DriveForm = ({ onSubmit, pageCount }) => {
   const { t } = useTranslation();
   const photosPerPage = 3;
   const estimatedPhotos = pageCount * photosPerPage;
+  const [submitError, setSubmitError] = useState(null);
   
   // Validation schema
   const validationSchema = Yup.object({
@@ -185,6 +186,34 @@ const DriveForm = ({ onSubmit, pageCount }) => {
     phone: Yup.string().required('מספר טלפון הוא שדה חובה'),
     address: Yup.string().required('כתובת למשלוח היא שדה חובה'),
   });
+
+  // Handle form submission with API call to serverless function
+  const handleSubmit = async (values, { setSubmitting }) => {
+    try {
+      setSubmitError(null);
+      const response = await fetch('/api/submit-form', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(values),
+      });
+      
+      const data = await response.json();
+      
+      if (!response.ok) {
+        throw new Error(data.message || 'שגיאה בשליחת הטופס');
+      }
+      
+      // Call the onSubmit prop to continue with payment flow
+      onSubmit(values);
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setSubmitError(error.message);
+    } finally {
+      setSubmitting(false);
+    }
+  };
 
   return (
     <FormContainer>
@@ -204,10 +233,7 @@ const DriveForm = ({ onSubmit, pageCount }) => {
           address: '',
         }}
         validationSchema={validationSchema}
-        onSubmit={(values, { setSubmitting }) => {
-          onSubmit(values);
-          setSubmitting(false);
-        }}
+        onSubmit={handleSubmit}
       >
         {({ isSubmitting }) => (
           <Form>
@@ -298,8 +324,14 @@ const DriveForm = ({ onSubmit, pageCount }) => {
               </ProcessSteps>
             </TransparentProcess>
 
+            {submitError && (
+              <ErrorText style={{ marginBottom: '15px', textAlign: 'center' }}>
+                {submitError}
+              </ErrorText>
+            )}
+
             <SubmitButton type="submit" disabled={isSubmitting}>
-              המשך לתשלום
+              {isSubmitting ? 'שולח...' : 'המשך לתשלום'}
             </SubmitButton>
           </Form>
         )}
