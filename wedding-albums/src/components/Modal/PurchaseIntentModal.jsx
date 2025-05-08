@@ -176,9 +176,10 @@ const SuccessMessage = styled.div`
 const PurchaseIntentModal = ({ email = '', onJoinWaitlist, onClose }) => {
   const [waitlistEmail, setWaitlistEmail] = useState(email);
   const [error, setError] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     
     if (!waitlistEmail.trim()) {
@@ -191,12 +192,36 @@ const PurchaseIntentModal = ({ email = '', onJoinWaitlist, onClose }) => {
       return;
     }
     
-    // Simulate submitting to waitlist
-    setIsSubmitted(true);
+    setIsSubmitting(true);
     
-    // Call the parent component's callback
-    if (onJoinWaitlist) {
-      onJoinWaitlist(waitlistEmail);
+    try {
+      // Call our serverless function endpoint
+      const response = await fetch('/api/waitlist-signup', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email: waitlistEmail }),
+      });
+      
+      const data = await response.json();
+      
+      if (!response.ok) {
+        throw new Error(data.message || 'שגיאה בשליחת האימייל');
+      }
+      
+      // Set submission as successful
+      setIsSubmitted(true);
+      
+      // Call the parent component's callback if provided
+      if (onJoinWaitlist) {
+        onJoinWaitlist(waitlistEmail);
+      }
+    } catch (error) {
+      console.error('Error signing up for waitlist:', error);
+      setError('חלה שגיאה בשליחת הטופס. אנא נסה שוב מאוחר יותר.');
+    } finally {
+      setIsSubmitting(false);
     }
   };
   
@@ -260,8 +285,8 @@ const PurchaseIntentModal = ({ email = '', onJoinWaitlist, onClose }) => {
           <CancelButton type="button" onClick={onClose}>
             סגירה
           </CancelButton>
-          <WaitlistButton type="submit">
-            הצטרף לרשימת ההמתנה
+          <WaitlistButton type="submit" disabled={isSubmitting}>
+            {isSubmitting ? 'שולח...' : 'הצטרף לרשימת ההמתנה'}
           </WaitlistButton>
         </ButtonGroup>
       </Form>
