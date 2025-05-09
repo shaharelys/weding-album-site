@@ -333,7 +333,6 @@ const OverlayModal = styled.div`
 
 const HomePage = () => {
   const { t } = useTranslation();
-  // eslint-disable-next-line no-unused-vars
   const navigate = useNavigate();
   const [step, setStep] = useState('selection');
   const [formData, setFormData] = useState({});
@@ -344,7 +343,6 @@ const HomePage = () => {
   const [email, setEmail] = useState('');
   
   const videoRef = useRef(null);
-  // Using the combined video instead of switching between two videos
   const combinedVideoPath = "/images/Video Premium Album_files/combined_hero_video.mp4";
 
   useEffect(() => {
@@ -372,7 +370,12 @@ const HomePage = () => {
   const handleDetailSubmit = (data) => {
     setFormData({...data, albumStyle, pageCount});
     setEmail(data.email || '');
-    setShowPurchaseIntentModal(true);
+    
+    if (process.env.NODE_ENV === 'production') {
+      navigate('/success');
+    } else {
+      setShowPurchaseIntentModal(true);
+    }
   };
 
   const handleJoinWaitlist = (email) => {
@@ -386,6 +389,7 @@ const HomePage = () => {
 
   const handlePaymentSuccess = () => {
     console.log("Payment successful");
+    navigate('/success');
   };
 
   const scrollToAlbumSelection = () => {
@@ -497,7 +501,7 @@ const HomePage = () => {
               <ContactDetails>
                 <ContactMethodName>וואטסאפ</ContactMethodName>
                 <ContactInfo>
-                  <ContactLink href="https://wa.me/972501234567" target="_blank">050-1234567</ContactLink>
+                  <ContactLink href="https://wa.me/972544666185" target="_blank">054-466-6185</ContactLink>
                 </ContactInfo>
               </ContactDetails>
             </ContactMethod>
