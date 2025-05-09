@@ -16,6 +16,17 @@ const FooterContent = styled.div`
   padding: 0 20px;
 `;
 
+const LogoContainer = styled.div`
+  display: flex;
+  justify-content: flex-end; /* Aligns to the right in RTL */
+  margin-bottom: 30px;
+`;
+
+const LogoImage = styled.img`
+  height: 60px;
+  width: auto;
+`;
+
 const FooterGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -110,6 +121,9 @@ const Footer = () => {
   return (
     <FooterContainer>
       <FooterContent>
+        <LogoContainer>
+          <LogoImage src="/images/logo.png" alt="Albuma Logo" />
+        </LogoContainer>
         <FooterGrid>
           <FooterSection>
             <FooterSectionTitle>אלבומה</FooterSectionTitle>
@@ -147,7 +161,7 @@ const Footer = () => {
               <ContactIcon>
                 <i className="fab fa-whatsapp"></i>
               </ContactIcon>
-              <ContactText>{t('footer.whatsapp')}: 050-1234567</ContactText>
+              <ContactText>{t('footer.whatsapp')}: 054-466-6185</ContactText>
             </ContactItem>
           </FooterSection>
         </FooterGrid>

@@ -23,10 +23,14 @@ const Nav = styled.nav`
 `;
 
 const Logo = styled(Link)`
-  font-size: 24px;
-  font-weight: 700;
-  color: #9c6644;
   text-decoration: none;
+  display: flex;
+  align-items: center;
+`;
+
+const LogoImage = styled.img`
+  height: 40px;
+  width: auto;
 `;
 
 const NavLinks = styled.div`
@@ -71,7 +75,9 @@ const Header = () => {
   return (
     <HeaderContainer>
       <Nav>
-        <Logo to="/">{t('site.name')}</Logo>
+        <Logo to="/">
+          <LogoImage src="/images/logo.png" alt="Albuma Logo" />
+        </Logo>
         <NavLinks>
           <NavLink onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>{t('nav.home')}</NavLink>
           <NavLink onClick={() => scrollToSection('flow-section')}>{t('nav.howItWorks')}</NavLink>
