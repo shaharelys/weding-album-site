@@ -29,20 +29,25 @@ const LogoSvg = () => (
     height="55" 
     viewBox="0 0 140 55" 
     xmlns="http://www.w3.org/2000/svg"
+    direction="ltr"
   >
-    <text 
-      x="0" 
-      y="35" 
-      fill="#ffffff" 
-      style={{ 
-        fontFamily: 'Arial, sans-serif', 
-        fontSize: '28px', 
-        fontWeight: 'bold' 
-      }}
-    >
-      Albuma
-    </text>
-    <rect x="110" y="18" width="18" height="18" fill="#e5a87f" />
+    <g>
+      <rect x="0" y="18" width="18" height="18" fill="#e5a87f" />
+      <text 
+        x="28" 
+        y="35" 
+        fill="#ffffff" 
+        style={{ 
+          fontFamily: 'Arial, sans-serif', 
+          fontSize: '28px', 
+          fontWeight: 'bold',
+          direction: 'ltr',
+          textAnchor: 'start'
+        }}
+      >
+        Albuma
+      </text>
+    </g>
   </svg>
 );
 
