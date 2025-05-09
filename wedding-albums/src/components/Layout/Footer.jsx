@@ -20,20 +20,31 @@ const LogoContainer = styled.div`
   text-align: right;
   margin-bottom: 30px;
   display: block;
-  height: 60px; /* Control the container height */
-  overflow: hidden;
 `;
 
-const LogoImage = styled.img`
-  height: 90px; /* Make logo larger than container */
-  width: auto;
-  max-width: 180px; /* Limit width to improve loading performance */
-  /* Apply filters to create a white version of the logo */
-  filter: brightness(0) invert(1);
-  object-fit: cover;
-  object-position: center 40%; /* Adjust vertical position to show more of lower portion */
-  margin-top: -8px; /* Adjusted to move logo downward */
-`;
+// White version of the logo for the dark footer
+const LogoSvg = () => (
+  <svg 
+    width="140" 
+    height="55" 
+    viewBox="0 0 140 55" 
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <text 
+      x="0" 
+      y="35" 
+      fill="#ffffff" 
+      style={{ 
+        fontFamily: 'Arial, sans-serif', 
+        fontSize: '28px', 
+        fontWeight: 'bold' 
+      }}
+    >
+      Albuma
+    </text>
+    <rect x="110" y="18" width="18" height="18" fill="#e5a87f" />
+  </svg>
+);
 
 const FooterGrid = styled.div`
   display: grid;
@@ -130,7 +141,7 @@ const Footer = () => {
     <FooterContainer>
       <FooterContent>
         <LogoContainer>
-          <LogoImage src="/images/logo2.png" alt="Albuma" />
+          <LogoSvg />
         </LogoContainer>
         <FooterGrid>
           <FooterSection>
