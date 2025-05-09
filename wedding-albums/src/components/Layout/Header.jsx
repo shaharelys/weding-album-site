@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
+import logoImage from '../../assets/logo.png'; // Import logo from assets
 
 const HeaderContainer = styled.header`
   background-color: #ffffff;
@@ -76,7 +77,7 @@ const Header = () => {
     <HeaderContainer>
       <Nav>
         <Logo to="/">
-          <LogoImage src={process.env.PUBLIC_URL + '/images/logo.png'} alt="Albuma" />
+          <LogoImage src={logoImage} alt="Albuma" />
         </Logo>
         <NavLinks>
           <NavLink onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>{t('nav.home')}</NavLink>
