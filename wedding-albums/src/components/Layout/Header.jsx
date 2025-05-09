@@ -36,6 +36,7 @@ const LogoImage = styled.img`
   object-fit: cover;
   object-position: center 40%; /* Adjust vertical position to show lower part */
   margin-top: -5px; /* Adjusted to move logo downward */
+  max-width: 150px; /* Limit width to improve loading performance */
 `;
 
 const NavLinks = styled.div`
@@ -81,7 +82,7 @@ const Header = () => {
     <HeaderContainer>
       <Nav>
         <Logo to="/">
-          <LogoImage src={process.env.PUBLIC_URL + '/images/logo2.png'} alt="Albuma" />
+          <LogoImage src="/images/logo2.png" alt="Albuma" />
         </Logo>
         <NavLinks>
           <NavLink onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>{t('nav.home')}</NavLink>

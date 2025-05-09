@@ -27,6 +27,7 @@ const LogoContainer = styled.div`
 const LogoImage = styled.img`
   height: 90px; /* Make logo larger than container */
   width: auto;
+  max-width: 180px; /* Limit width to improve loading performance */
   /* Apply filters to create a white version of the logo */
   filter: brightness(0) invert(1);
   object-fit: cover;
@@ -129,7 +130,7 @@ const Footer = () => {
     <FooterContainer>
       <FooterContent>
         <LogoContainer>
-          <LogoImage src={process.env.PUBLIC_URL + '/images/logo2.png'} alt="Albuma" />
+          <LogoImage src="/images/logo2.png" alt="Albuma" />
         </LogoContainer>
         <FooterGrid>
           <FooterSection>
