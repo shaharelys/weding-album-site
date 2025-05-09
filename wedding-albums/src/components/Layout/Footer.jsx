@@ -110,10 +110,10 @@ const SocialLink = styled.a`
   }
 `;
 
-const FooterText = styled.p`
-  margin: 0;
-  font-size: 0.9rem;
-`;
+// const FooterText = styled.p`
+//   margin: 0;
+//   font-size: 0.9rem;
+// `;
 
 const LogoImage = styled.img`
   height: 50px; // Adjust as needed

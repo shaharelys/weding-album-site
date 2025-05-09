@@ -188,89 +188,89 @@ const HomeLink = styled(Link)`
 const SuccessPage = () => {
   // Get translations but provide fallbacks in case they're not available
   const { t } = useTranslation();
-  
+
   // Use a simple try/catch to prevent the component from crashing
   try {
     return (
       <SuccessContainer>
         <SuccessContent>
           <SuccessIcon />
-          <SuccessTitle>ההזמנה שלך התקבלה!</SuccessTitle>
-          <SuccessMessage>תודה שבחרת לעצב אלבום חתונה איתנו. אנחנו מתרגשים להתחיל לעבוד על האלבום המושלם עבורכם.</SuccessMessage>
-          
+          <SuccessTitle>{t('successPage.mainTitle', 'ההזמנה שלך התקבלה!')}</SuccessTitle>
+          <SuccessMessage>{t('successPage.mainMessage', 'תודה שבחרת לעצב אלבום חתונה איתנו. אנחנו מתרגשים להתחיל לעבוד על האלבום המושלם עבורכם.')}</SuccessMessage>
+
           <ProcessSection>
-            <ProcessTitle>מה קורה עכשיו?</ProcessTitle>
-            
+            <ProcessTitle>{t('successPage.processTitle', 'מה קורה עכשיו?')}</ProcessTitle>
+
             <TimelineContainer>
               <TimelineItem>
                 <TimelineDot>1</TimelineDot>
                 <TimelineContent>
-                  <TimelineTitle>בחירת התמונות</TimelineTitle>
+                  <TimelineTitle>{t('successPage.timeline.item1.title', 'בחירת התמונות')}</TimelineTitle>
                   <TimelineDescription>
-                    צוות העורכים שלנו יעבור על התמונות שלכם ויבחר את התמונות המושלמות לאלבום שלכם.
+                    {t('successPage.timeline.item1.description', 'צוות העורכים שלנו יעבור על התמונות שלכם ויבחר את התמונות המושלמות לאלבום שלכם.')}
                   </TimelineDescription>
                   <TimelineDetail>
-                    זמן משוער: עד 7 ימי עסקים
+                    {t('successPage.timeline.item1.detail', 'זמן משוער: עד 7 ימי עסקים')}
                   </TimelineDetail>
                 </TimelineContent>
               </TimelineItem>
-              
+
               <TimelineItem>
                 <TimelineDot>2</TimelineDot>
                 <TimelineContent>
-                  <TimelineTitle>קישור לגלריה מוצעת</TimelineTitle>
+                  <TimelineTitle>{t('successPage.timeline.item2.title', 'קישור לגלריה מוצעת')}</TimelineTitle>
                   <TimelineDescription>
-                    תקבלו אימייל עם קישור לגלריה מוצעת הכוללת את התמונות שנבחרו ותמונות חלופיות מומלצות.
+                    {t('successPage.timeline.item2.description', 'תקבלו אימייל עם קישור לגלריה מוצעת הכוללת את התמונות שנבחרו ותמונות חלופיות מומלצות.')}
                   </TimelineDescription>
                   <TimelineDetail>
-                    כל תמונה מסומנת במספר ייחודי לצורך זיהוי קל
+                    {t('successPage.timeline.item2.detail', 'כל תמונה מסומנת במספר ייחודי לצורך זיהוי קל')}
                   </TimelineDetail>
                 </TimelineContent>
               </TimelineItem>
-              
+
               <TimelineItem>
                 <TimelineDot>3</TimelineDot>
                 <TimelineContent>
-                  <TimelineTitle>אישור או בקשת שינויים</TimelineTitle>
+                  <TimelineTitle>{t('successPage.timeline.item3.title', 'אישור או בקשת שינויים')}</TimelineTitle>
                   <TimelineDescription>
-                    תוכלו לאשר את הבחירה או לבקש להחליף תמונות לפי העדפתכם.
+                    {t('successPage.timeline.item3.description', 'תוכלו לאשר את הבחירה או לבקש להחליף תמונות לפי העדפתכם.')}
                   </TimelineDescription>
                   <TimelineDetail>
-                    פשוט שלחו לנו הודעת WhatsApp עם מספרי התמונות שברצונכם להחליף והחלופות המועדפות.
+                    {t('successPage.timeline.item3.detail', 'פשוט שלחו לנו הודעת WhatsApp עם מספרי התמונות שברצונכם להחליף והחלופות המועדפות.')}
                   </TimelineDetail>
                 </TimelineContent>
               </TimelineItem>
-              
+
               <TimelineItem>
                 <TimelineDot>4</TimelineDot>
                 <TimelineContent>
-                  <TimelineTitle>הדפסה ומשלוח</TimelineTitle>
+                  <TimelineTitle>{t('successPage.timeline.item4.title', 'הדפסה ומשלוח')}</TimelineTitle>
                   <TimelineDescription>
-                    לאחר האישור הסופי שלכם, האלבום ייכנס לתהליך הדפסה ויישלח אליכם.
+                    {t('successPage.timeline.item4.description', 'לאחר האישור הסופי שלכם, האלבום ייכנס לתהליך הדפסה ויישלח אליכם.')}
                   </TimelineDescription>
                   <TimelineDetail>
-                    רק אחרי אישורכם האלבום יועבר להדפסה
+                    {t('successPage.timeline.item4.detail', 'רק אחרי אישורכם האלבום יועבר להדפסה')}
                   </TimelineDetail>
                 </TimelineContent>
               </TimelineItem>
             </TimelineContainer>
           </ProcessSection>
-          
+
           <DeliveryInfo>
-            <DeliveryTitle>פרטי המשלוח</DeliveryTitle>
-            <p>האלבום יישלח לכתובת שסיפקתם תוך 7 ימי עסקים מרגע האישור הסופי.</p>
-            <p>ההדפסה, הכריכה והמשלוח כלולים במחיר ששילמתם.</p>
+            <DeliveryTitle>{t('successPage.deliveryTitle', 'פרטי המשלוח')}</DeliveryTitle>
+            <p>{t('successPage.deliveryInfo.line1', 'האלבום יישלח לכתובת שסיפקתם תוך 7 ימי עסקים מרגע האישור הסופי.')}</p>
+            <p>{t('successPage.deliveryInfo.line2', 'ההדפסה, הכריכה והמשלוח כלולים במחיר ששילמתם.')}</p>
           </DeliveryInfo>
-          
+
           <ContactSection>
-            <ContactTitle>יש לכם שאלות?</ContactTitle>
-            <p>אתם מוזמנים לפנות אלינו בכל שאלה או בקשה:</p>
+            <ContactTitle>{t('successPage.contactTitle', 'יש לכם שאלות?')}</ContactTitle>
+            <p>{t('successPage.contactMessage', 'אתם מוזמנים לפנות אלינו בכל שאלה או בקשה:')}</p>
             <WhatsAppLink href="https://wa.me/972544666185" target="_blank" rel="noopener noreferrer">
-              שלחו לנו הודעה
+              {t('successPage.whatsappLinkText', 'שלחו לנו הודעה')}
             </WhatsAppLink>
           </ContactSection>
-          
-          <HomeLink to="/">חזרה לדף הבית</HomeLink>
+
+          <HomeLink to="/">{t('successPage.homeLinkText', 'חזרה לדף הבית')}</HomeLink>
         </SuccessContent>
       </SuccessContainer>
     );
@@ -279,18 +279,18 @@ const SuccessPage = () => {
     console.error("Error rendering SuccessPage:", error);
     return (
       <div style={{ margin: '100px auto', textAlign: 'center', maxWidth: '500px' }}>
-        <h1>ההזמנה שלך התקבלה!</h1>
-        <p>תודה שבחרת לעצב אלבום חתונה איתנו.</p>
-        <p>אנחנו מתרגשים להתחיל לעבוד על האלבום המושלם עבורכם.</p>
+        <h1>{t('successPage.fallback.mainTitle', 'ההזמנה שלך התקבלה!')}</h1>
+        <p>{t('successPage.fallback.message1', 'תודה שבחרת לעצב אלבום חתונה איתנו.')}</p>
+        <p>{t('successPage.fallback.message2', 'אנחנו מתרגשים להתחיל לעבוד על האלבום המושלם עבורכם.')}</p>
         <div style={{ marginTop: '30px' }}>
-          <Link to="/" style={{ 
-            padding: '10px 20px', 
-            background: '#9c6644', 
+          <Link to="/" style={{
+            padding: '10px 20px',
+            background: '#9c6644',
             color: 'white',
             textDecoration: 'none',
             borderRadius: '5px'
           }}>
-            חזרה לדף הבית
+            {t('successPage.fallback.homeLinkText', 'חזרה לדף הבית')}
           </Link>
         </div>
       </div>
