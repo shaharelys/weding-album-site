@@ -111,7 +111,7 @@ const privacyPolicyText = {
   
   'contact': {
     'heading': 'צור קשר',
-    'content': 'אם יש לך שאלות כלשהן לגבי מדיניות פרטיות זו, צור קשר בדוא״ל בכתובת privacy@wedding-albums.co.il או בטלפון 050-1234567.'
+    'content': 'אם יש לך שאלות כלשהן לגבי מדיניות פרטיות זו, צור קשר בדוא״ל בכתובת privacy@wedding-albums.co.il או בטלפון 054-466-6185.'
   }
 };
 

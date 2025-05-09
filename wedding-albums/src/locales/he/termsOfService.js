@@ -112,7 +112,7 @@ const termsOfServiceText = {
   
   'contact': {
     'heading': 'צור קשר',
-    'content': 'אם יש לך שאלות כלשהן לגבי תנאי שימוש אלה, אנא צור קשר עמנו בדוא״ל בכתובת legal@wedding-albums.co.il או בטלפון 050-1234567.'
+    'content': 'אם יש לך שאלות כלשהן לגבי תנאי שימוש אלה, אנא צור קשר עמנו בדוא״ל בכתובת legal@wedding-albums.co.il או בטלפון 054-466-6185.'
   }
 };
 

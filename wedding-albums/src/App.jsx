@@ -7,6 +7,7 @@ import HomePage from './pages/HomePage';
 import AdminPage from './pages/AdminPage';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
+import SuccessPage from './pages/SuccessPage';
 
 const AppContainer = styled.div`
   display: flex;
@@ -29,6 +30,7 @@ function App() {
           <Route path="/admin" element={<AdminPage />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path="/terms" element={<TermsOfService />} />
+          <Route path="/success" element={<SuccessPage />} />
         </Routes>
       </MainContent>
       <Footer />

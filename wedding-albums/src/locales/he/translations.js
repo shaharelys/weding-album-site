@@ -87,7 +87,7 @@ const translations = {
   'success.step1': 'צוות המעצבים שלנו יבחן את התמונות שלך',
   'success.step2': 'תוך 7 ימי עסקים תקבל קישור לגלריה עם התמונות הנבחרות',
   'success.step3': 'תוכל לבקש שינויים דרך WhatsApp',
-  'success.contactInfo': 'אם יש לך שאלות, אתה מוזמן ליצור קשר: 050-1234567',
+  'success.contactInfo': 'אם יש לך שאלות, אתה מוזמן ליצור קשר: 054-466-6185',
   
   // Footer
   'footer.copyright': '© 2025 אלבומה. כל הזכויות שמורות.',

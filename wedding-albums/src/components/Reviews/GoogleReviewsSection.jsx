@@ -325,7 +325,7 @@ const GoogleReviewsSection = () => {
       <ReviewsContent>
         <ReviewsTitle>{t('reviews.title')}</ReviewsTitle>
         <ReviewsSubtitle>
-          אלפי לקוחות מרוצים כבר הזמינו אלבום דרכנו. הנה מה שיש להם לומר על החוויה
+          הנה כמה דברים ששמענו מלקוחות שכבר הזמינו אצלנו אלבום
         </ReviewsSubtitle>
         
         <GoogleRatingContainer>

@@ -186,92 +186,116 @@ const HomeLink = styled(Link)`
 `;
 
 const SuccessPage = () => {
-  // eslint-disable-next-line no-unused-vars
+  // Get translations but provide fallbacks in case they're not available
   const { t } = useTranslation();
   
-  return (
-    <SuccessContainer>
-      <SuccessContent>
-        <SuccessIcon />
-        <SuccessTitle>ההזמנה שלך התקבלה!</SuccessTitle>
-        <SuccessMessage>תודה שבחרת לעצב אלבום חתונה איתנו. אנחנו מתרגשים להתחיל לעבוד על האלבום המושלם עבורכם.</SuccessMessage>
-        
-        <ProcessSection>
-          <ProcessTitle>מה קורה עכשיו?</ProcessTitle>
+  // Use a simple try/catch to prevent the component from crashing
+  try {
+    return (
+      <SuccessContainer>
+        <SuccessContent>
+          <SuccessIcon />
+          <SuccessTitle>ההזמנה שלך התקבלה!</SuccessTitle>
+          <SuccessMessage>תודה שבחרת לעצב אלבום חתונה איתנו. אנחנו מתרגשים להתחיל לעבוד על האלבום המושלם עבורכם.</SuccessMessage>
           
-          <TimelineContainer>
-            <TimelineItem>
-              <TimelineDot>1</TimelineDot>
-              <TimelineContent>
-                <TimelineTitle>בחירת התמונות</TimelineTitle>
-                <TimelineDescription>
-                  צוות העורכים שלנו יעבור על התמונות שלכם ויבחר את התמונות המושלמות לאלבום שלכם.
-                </TimelineDescription>
-                <TimelineDetail>
-                  זמן משוער: עד 7 ימי עסקים
-                </TimelineDetail>
-              </TimelineContent>
-            </TimelineItem>
+          <ProcessSection>
+            <ProcessTitle>מה קורה עכשיו?</ProcessTitle>
             
-            <TimelineItem>
-              <TimelineDot>2</TimelineDot>
-              <TimelineContent>
-                <TimelineTitle>קישור לגלריה מוצעת</TimelineTitle>
-                <TimelineDescription>
-                  תקבלו אימייל עם קישור לגלריה מוצעת הכוללת את התמונות שנבחרו ותמונות חלופיות מומלצות.
-                </TimelineDescription>
-                <TimelineDetail>
-                  כל תמונה מסומנת במספר ייחודי לצורך זיהוי קל
-                </TimelineDetail>
-              </TimelineContent>
-            </TimelineItem>
-            
-            <TimelineItem>
-              <TimelineDot>3</TimelineDot>
-              <TimelineContent>
-                <TimelineTitle>אישור או בקשת שינויים</TimelineTitle>
-                <TimelineDescription>
-                  תוכלו לאשר את הבחירה או לבקש להחליף תמונות לפי העדפתכם.
-                </TimelineDescription>
-                <TimelineDetail>
-                  פשוט שלחו לנו הודעת WhatsApp עם מספרי התמונות שברצונכם להחליף והחלופות המועדפות.
-                </TimelineDetail>
-              </TimelineContent>
-            </TimelineItem>
-            
-            <TimelineItem>
-              <TimelineDot>4</TimelineDot>
-              <TimelineContent>
-                <TimelineTitle>הדפסה ומשלוח</TimelineTitle>
-                <TimelineDescription>
-                  לאחר האישור הסופי שלכם, האלבום ייכנס לתהליך הדפסה ויישלח אליכם.
-                </TimelineDescription>
-                <TimelineDetail>
-                  רק אחרי אישורכם האלבום יועבר להדפסה
-                </TimelineDetail>
-              </TimelineContent>
-            </TimelineItem>
-          </TimelineContainer>
-        </ProcessSection>
-        
-        <DeliveryInfo>
-          <DeliveryTitle>פרטי המשלוח</DeliveryTitle>
-          <p>האלבום יישלח לכתובת שסיפקתם תוך 7 ימי עסקים מרגע האישור הסופי.</p>
-          <p>ההדפסה, הכריכה והמשלוח כלולים במחיר ששילמתם.</p>
-        </DeliveryInfo>
-        
-        <ContactSection>
-          <ContactTitle>יש לכם שאלות?</ContactTitle>
-          <p>אתם מוזמנים לפנות אלינו בכל שאלה או בקשה:</p>
-          <WhatsAppLink href="https://wa.me/972501234567" target="_blank" rel="noopener noreferrer">
-            שלחו לנו הודעה
-          </WhatsAppLink>
-        </ContactSection>
-        
-        <HomeLink to="/">חזרה לדף הבית</HomeLink>
-      </SuccessContent>
-    </SuccessContainer>
-  );
+            <TimelineContainer>
+              <TimelineItem>
+                <TimelineDot>1</TimelineDot>
+                <TimelineContent>
+                  <TimelineTitle>בחירת התמונות</TimelineTitle>
+                  <TimelineDescription>
+                    צוות העורכים שלנו יעבור על התמונות שלכם ויבחר את התמונות המושלמות לאלבום שלכם.
+                  </TimelineDescription>
+                  <TimelineDetail>
+                    זמן משוער: עד 7 ימי עסקים
+                  </TimelineDetail>
+                </TimelineContent>
+              </TimelineItem>
+              
+              <TimelineItem>
+                <TimelineDot>2</TimelineDot>
+                <TimelineContent>
+                  <TimelineTitle>קישור לגלריה מוצעת</TimelineTitle>
+                  <TimelineDescription>
+                    תקבלו אימייל עם קישור לגלריה מוצעת הכוללת את התמונות שנבחרו ותמונות חלופיות מומלצות.
+                  </TimelineDescription>
+                  <TimelineDetail>
+                    כל תמונה מסומנת במספר ייחודי לצורך זיהוי קל
+                  </TimelineDetail>
+                </TimelineContent>
+              </TimelineItem>
+              
+              <TimelineItem>
+                <TimelineDot>3</TimelineDot>
+                <TimelineContent>
+                  <TimelineTitle>אישור או בקשת שינויים</TimelineTitle>
+                  <TimelineDescription>
+                    תוכלו לאשר את הבחירה או לבקש להחליף תמונות לפי העדפתכם.
+                  </TimelineDescription>
+                  <TimelineDetail>
+                    פשוט שלחו לנו הודעת WhatsApp עם מספרי התמונות שברצונכם להחליף והחלופות המועדפות.
+                  </TimelineDetail>
+                </TimelineContent>
+              </TimelineItem>
+              
+              <TimelineItem>
+                <TimelineDot>4</TimelineDot>
+                <TimelineContent>
+                  <TimelineTitle>הדפסה ומשלוח</TimelineTitle>
+                  <TimelineDescription>
+                    לאחר האישור הסופי שלכם, האלבום ייכנס לתהליך הדפסה ויישלח אליכם.
+                  </TimelineDescription>
+                  <TimelineDetail>
+                    רק אחרי אישורכם האלבום יועבר להדפסה
+                  </TimelineDetail>
+                </TimelineContent>
+              </TimelineItem>
+            </TimelineContainer>
+          </ProcessSection>
+          
+          <DeliveryInfo>
+            <DeliveryTitle>פרטי המשלוח</DeliveryTitle>
+            <p>האלבום יישלח לכתובת שסיפקתם תוך 7 ימי עסקים מרגע האישור הסופי.</p>
+            <p>ההדפסה, הכריכה והמשלוח כלולים במחיר ששילמתם.</p>
+          </DeliveryInfo>
+          
+          <ContactSection>
+            <ContactTitle>יש לכם שאלות?</ContactTitle>
+            <p>אתם מוזמנים לפנות אלינו בכל שאלה או בקשה:</p>
+            <WhatsAppLink href="https://wa.me/972544666185" target="_blank" rel="noopener noreferrer">
+              שלחו לנו הודעה
+            </WhatsAppLink>
+          </ContactSection>
+          
+          <HomeLink to="/">חזרה לדף הבית</HomeLink>
+        </SuccessContent>
+      </SuccessContainer>
+    );
+  } catch (error) {
+    // Log the error and provide a simple fallback UI
+    console.error("Error rendering SuccessPage:", error);
+    return (
+      <div style={{ margin: '100px auto', textAlign: 'center', maxWidth: '500px' }}>
+        <h1>ההזמנה שלך התקבלה!</h1>
+        <p>תודה שבחרת לעצב אלבום חתונה איתנו.</p>
+        <p>אנחנו מתרגשים להתחיל לעבוד על האלבום המושלם עבורכם.</p>
+        <div style={{ marginTop: '30px' }}>
+          <Link to="/" style={{ 
+            padding: '10px 20px', 
+            background: '#9c6644', 
+            color: 'white',
+            textDecoration: 'none',
+            borderRadius: '5px'
+          }}>
+            חזרה לדף הבית
+          </Link>
+        </div>
+      </div>
+    );
+  }
 };
 
 export default SuccessPage;

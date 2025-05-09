@@ -6,7 +6,7 @@ import styled from 'styled-components';
 const HeaderContainer = styled.header`
   background-color: #ffffff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 15px 0;
+  padding: 10px 0; // Reduced padding from 15px to 10px
   position: sticky;
   top: 0;
   z-index: 100;
@@ -26,6 +26,11 @@ const Logo = styled(Link)`
   text-decoration: none;
   display: flex;
   align-items: center;
+`;
+
+const LogoImage = styled.img`
+  height: 50px; // Adjust as needed
+  width: auto;
 `;
 
 const NavLinks = styled.div`
@@ -71,16 +76,7 @@ const Header = () => {
     <HeaderContainer>
       <Nav>
         <Logo to="/">
-          <div style={{ textAlign: 'center' }}>
-            <span style={{ 
-              fontSize: '24px', 
-              fontWeight: 'bold', 
-              color: '#333',
-              display: 'block'
-            }}>
-              אלבומה
-            </span>
-          </div>
+          <LogoImage src="/images/logo2.png" alt="אלבומה לוגו" />
         </Logo>
         <NavLinks>
           <NavLink onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>{t('nav.home')}</NavLink>

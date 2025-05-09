@@ -85,7 +85,7 @@ const homePageText = {
     'methods': {
       'whatsapp': {
         'name': 'וואטסאפ',
-        'info': '050-1234567'
+        'info': '054-466-6185'
       },
       'email': {
         'name': 'דוא"ל',

@@ -110,6 +110,18 @@ const SocialLink = styled.a`
   }
 `;
 
+const FooterText = styled.p`
+  margin: 0;
+  font-size: 0.9rem;
+`;
+
+const LogoImage = styled.img`
+  height: 50px; // Adjust as needed
+  width: auto;
+  margin-bottom: 10px;
+  filter: invert(1);
+`;
+
 const Footer = () => {
   const { t } = useTranslation();
   
@@ -117,16 +129,7 @@ const Footer = () => {
     <FooterContainer>
       <FooterContent>
         <LogoContainer>
-          <div style={{ textAlign: 'right' }}>
-            <span style={{ 
-              fontSize: '30px', 
-              fontWeight: 'bold', 
-              color: '#ffffff',
-              display: 'block'
-            }}>
-              אלבומה
-            </span>
-          </div>
+          <LogoImage src="/images/logo2.png" alt="אלבומה לוגו" />
         </LogoContainer>
         <FooterGrid>
           <FooterSection>

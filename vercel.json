@@ -20,5 +20,6 @@
       "src": "/(.*)",
       "dest": "wedding-albums/$1"
     }
-  ]
+  ],
+  "buildCommand": "npm run build && curl -X GET $DEPLOYMENT_URL/api/init-db"
 }
