@@ -27,11 +27,16 @@ const Logo = styled(Link)`
   text-decoration: none;
   display: flex;
   align-items: center;
+  height: 45px; /* Control the height of the container */
+  overflow: hidden;
 `;
 
 const LogoImage = styled.img`
-  height: 60px; /* Increased from 40px to 60px */
   width: auto;
+  height: 70px; /* Make image larger than container */
+  object-fit: cover;
+  object-position: center; /* Show the center portion of the image */
+  margin-top: -8px; /* Crop the top portion */
 `;
 
 const NavLinks = styled.div`

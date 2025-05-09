@@ -21,13 +21,18 @@ const LogoContainer = styled.div`
   text-align: right;
   margin-bottom: 30px;
   display: block;
+  height: 60px; /* Control the container height */
+  overflow: hidden;
 `;
 
 const LogoImage = styled.img`
-  height: 80px; /* Increased size from 60px to 80px */
+  height: 90px; /* Make logo larger than container */
   width: auto;
   /* Apply filters to create a white version of the logo */
   filter: brightness(0) invert(1);
+  object-fit: cover;
+  object-position: center; /* Show the center portion */
+  margin-top: -10px; /* Adjust to crop top portion */
 `;
 
 const FooterGrid = styled.div`
