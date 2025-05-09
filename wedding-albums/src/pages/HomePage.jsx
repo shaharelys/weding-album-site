@@ -371,11 +371,15 @@ const HomePage = () => {
     setFormData({...data, albumStyle, pageCount});
     setEmail(data.email || '');
     
-    if (process.env.NODE_ENV === 'production') {
-      navigate('/success');
-    } else {
-      setShowPurchaseIntentModal(true);
-    }
+    // Always show waitlist modal - since the service is still under development
+    setShowPurchaseIntentModal(true);
+    
+    // We'll navigate to success page only after real payment processing in the future
+    // if (process.env.NODE_ENV === 'production') {
+    //   navigate('/success');
+    // } else {
+    //   setShowPurchaseIntentModal(true);
+    // }
   };
 
   const handleJoinWaitlist = (email) => {
