@@ -76,7 +76,7 @@ const Header = () => {
     <HeaderContainer>
       <Nav>
         <Logo to="/">
-          <LogoImage src="/images/logo.png" alt="Albuma Logo" />
+          <LogoImage src="/images/logo.png" alt="Albuma" />
         </Logo>
         <NavLinks>
           <NavLink onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>{t('nav.home')}</NavLink>

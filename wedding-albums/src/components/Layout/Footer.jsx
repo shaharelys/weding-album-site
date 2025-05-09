@@ -122,7 +122,7 @@ const Footer = () => {
     <FooterContainer>
       <FooterContent>
         <LogoContainer>
-          <LogoImage src="/images/logo.png" alt="Albuma Logo" />
+          <LogoImage src="/images/logo.png" alt="Albuma" />
         </LogoContainer>
         <FooterGrid>
           <FooterSection>
