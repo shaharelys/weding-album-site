@@ -26,16 +26,6 @@ const Logo = styled(Link)`
   text-decoration: none;
   display: flex;
   align-items: center;
-  height: 45px;
-  overflow: hidden;
-`;
-
-const LogoImage = styled.img`
-  height: 70px;
-  width: auto;
-  object-fit: cover;
-  object-position: center 40%;
-  margin-top: -5px;
 `;
 
 const NavLinks = styled.div`
@@ -81,7 +71,16 @@ const Header = () => {
     <HeaderContainer>
       <Nav>
         <Logo to="/">
-          <LogoImage src="/images/logo2.png" alt="Albuma" />
+          <div style={{ textAlign: 'center' }}>
+            <span style={{ 
+              fontSize: '24px', 
+              fontWeight: 'bold', 
+              color: '#333',
+              display: 'block'
+            }}>
+              אלבומה
+            </span>
+          </div>
         </Logo>
         <NavLinks>
           <NavLink onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>{t('nav.home')}</NavLink>
@@ -93,5 +92,3 @@ const Header = () => {
     </HeaderContainer>
   );
 };
-
-export default Header;

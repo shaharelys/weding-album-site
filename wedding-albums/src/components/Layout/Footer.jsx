@@ -20,8 +20,6 @@ const LogoContainer = styled.div`
   text-align: right;
   margin-bottom: 30px;
   display: block;
-  height: 60px;
-  overflow: hidden;
 `;
 
 const LogoImage = styled.img`
@@ -128,7 +126,16 @@ const Footer = () => {
     <FooterContainer>
       <FooterContent>
         <LogoContainer>
-          <LogoImage src="/images/logo2.png" alt="Albuma" />
+          <div style={{ textAlign: 'right' }}>
+            <span style={{ 
+              fontSize: '30px', 
+              fontWeight: 'bold', 
+              color: '#ffffff',
+              display: 'block'
+            }}>
+              אלבומה
+            </span>
+          </div>
         </LogoContainer>
         <FooterGrid>
           <FooterSection>
