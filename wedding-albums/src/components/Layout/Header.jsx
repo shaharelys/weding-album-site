@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
-import logoImage from '../../assets/logo.png'; // Import logo from assets
 
 const HeaderContainer = styled.header`
   background-color: #ffffff;
@@ -35,8 +34,8 @@ const LogoImage = styled.img`
   width: auto;
   height: 70px; /* Make image larger than container */
   object-fit: cover;
-  object-position: center; /* Show the center portion of the image */
-  margin-top: -8px; /* Crop the top portion */
+  object-position: center 40%; /* Adjust vertical position to show lower part */
+  margin-top: -5px; /* Adjusted to move logo downward */
 `;
 
 const NavLinks = styled.div`
@@ -82,7 +81,7 @@ const Header = () => {
     <HeaderContainer>
       <Nav>
         <Logo to="/">
-          <LogoImage src={logoImage} alt="Albuma" />
+          <LogoImage src={process.env.PUBLIC_URL + '/images/logo2.png'} alt="Albuma" />
         </Logo>
         <NavLinks>
           <NavLink onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>{t('nav.home')}</NavLink>

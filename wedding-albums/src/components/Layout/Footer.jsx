@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
-import logoImage from '../../assets/logo.png'; // Import logo from assets
 
 const FooterContainer = styled.footer`
   background-color: #333;
@@ -31,8 +30,8 @@ const LogoImage = styled.img`
   /* Apply filters to create a white version of the logo */
   filter: brightness(0) invert(1);
   object-fit: cover;
-  object-position: center; /* Show the center portion */
-  margin-top: -10px; /* Adjust to crop top portion */
+  object-position: center 40%; /* Adjust vertical position to show more of lower portion */
+  margin-top: -8px; /* Adjusted to move logo downward */
 `;
 
 const FooterGrid = styled.div`
@@ -130,7 +129,7 @@ const Footer = () => {
     <FooterContainer>
       <FooterContent>
         <LogoContainer>
-          <LogoImage src={logoImage} alt="Albuma" />
+          <LogoImage src={process.env.PUBLIC_URL + '/images/logo2.png'} alt="Albuma" />
         </LogoContainer>
         <FooterGrid>
           <FooterSection>
