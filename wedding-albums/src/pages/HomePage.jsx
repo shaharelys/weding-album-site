@@ -384,7 +384,8 @@ const HomePage = () => {
 
   const handleJoinWaitlist = (email) => {
     console.log("User joined waitlist with email:", email);
-    setShowPurchaseIntentModal(false);
+    // Don't close the modal immediately - let the user see the success message
+    // The modal has its own close button for users to close it when they're ready
   };
 
   const handleCloseModal = () => {
