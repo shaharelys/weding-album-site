@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
-import AlbumaLogo from '/images/logo.png'; // Import logo directly
 
 const FooterContainer = styled.footer`
   background-color: #333;
@@ -123,7 +122,7 @@ const Footer = () => {
     <FooterContainer>
       <FooterContent>
         <LogoContainer>
-          <LogoImage src={AlbumaLogo} alt="Albuma" />
+          <LogoImage src={process.env.PUBLIC_URL + '/images/logo.png'} alt="Albuma" />
         </LogoContainer>
         <FooterGrid>
           <FooterSection>
