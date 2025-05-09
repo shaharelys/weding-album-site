@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 import ServiceFlowSection from '../components/ServiceFlow/ServiceFlowSection';
+import CustomerControlSection from '../components/CustomerControl/CustomerControlSection';
 import DriveForm from '../components/Form/DriveForm';
 import PaymentSection from '../components/Payment/PaymentSection';
 import AlbumSelection from '../components/Form/AlbumSelection';
@@ -447,6 +448,8 @@ const HomePage = () => {
         <SectionTitle>{t('flow.title')}</SectionTitle>
         <ServiceFlowSection />
       </SectionContainer>
+
+      <CustomerControlSection />
 
       <GoogleReviewsSection />
 
