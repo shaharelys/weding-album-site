@@ -26,40 +26,17 @@ const Logo = styled(Link)`
   text-decoration: none;
   display: flex;
   align-items: center;
-  color: #333;
-  font-size: 24px;
-  font-weight: 700;
+  height: 45px;
+  overflow: hidden;
 `;
 
-// Inline SVG logo instead of external image
-const LogoSvg = () => (
-  <svg 
-    width="120" 
-    height="45" 
-    viewBox="0 0 120 45" 
-    xmlns="http://www.w3.org/2000/svg"
-    style={{ marginRight: '5px' }}
-    direction="ltr"
-  >
-    <g>
-      <rect x="0" y="15" width="15" height="15" fill="#9c6644" />
-      <text 
-        x="25" 
-        y="30" 
-        fill="#333" 
-        style={{ 
-          fontFamily: 'Arial, sans-serif', 
-          fontSize: '24px', 
-          fontWeight: 'bold',
-          direction: 'ltr',
-          textAnchor: 'start'
-        }}
-      >
-        Albuma
-      </text>
-    </g>
-  </svg>
-);
+const LogoImage = styled.img`
+  height: 70px;
+  width: auto;
+  object-fit: cover;
+  object-position: center 40%;
+  margin-top: -5px;
+`;
 
 const NavLinks = styled.div`
   display: flex;
@@ -104,7 +81,7 @@ const Header = () => {
     <HeaderContainer>
       <Nav>
         <Logo to="/">
-          <LogoSvg />
+          <LogoImage src="/images/logo2.png" alt="Albuma" />
         </Logo>
         <NavLinks>
           <NavLink onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>{t('nav.home')}</NavLink>
