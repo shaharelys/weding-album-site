@@ -1,4 +1,6 @@
 // This is a Vercel serverless function to handle waitlist signups
+import { sql } from '../utils/database';
+
 export default async function handler(req, res) {
   // Only allow POST method for this endpoint
   if (req.method !== 'POST') {
@@ -20,12 +22,30 @@ export default async function handler(req, res) {
       return res.status(400).json({ message: 'Invalid email format' });
     }
 
-    // Log the waitlist signup for now
-    console.log('Waitlist signup received:', { email, timestamp: new Date().toISOString() });
+    // Store the email in the Neon database
+    const result = await sql`
+      INSERT INTO waitlist_signups (email)
+      VALUES (${email})
+      ON CONFLICT (email) DO NOTHING
+      RETURNING id
+    `;
+    
+    // Check if the email was inserted (not a duplicate)
+    if (result.length === 0) {
+      console.log('Waitlist signup attempted with existing email:', email);
+      return res.status(200).json({ 
+        message: 'Email already registered in waitlist',
+        email
+      });
+    }
+    
+    // Log the waitlist signup
+    console.log('Waitlist signup saved to database with ID:', result[0].id);
     
     // Return success response
     return res.status(200).json({ 
       message: 'Waitlist signup successful',
+      signupId: result[0].id,
       email
     });
   } catch (error) {

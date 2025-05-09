@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Header from './components/Layout/Header';
 import Footer from './components/Layout/Footer';
 import HomePage from './pages/HomePage';
+import AdminPage from './pages/AdminPage';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
 
@@ -25,6 +26,7 @@ function App() {
       <MainContent>
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/admin" element={<AdminPage />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path="/terms" element={<TermsOfService />} />
         </Routes>

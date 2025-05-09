@@ -1,4 +1,6 @@
 // This is a Vercel serverless function to handle form submissions
+import { sql } from '../utils/database';
+
 export default async function handler(req, res) {
   // Only allow POST method for this endpoint
   if (req.method !== 'POST') {
@@ -17,17 +19,35 @@ export default async function handler(req, res) {
       }
     }
 
-    // Here you would typically:
-    // 1. Save data to a database (MongoDB, Firebase, etc.)
-    // 2. Send notification emails
-    // 3. Process the submission
+    // Store the form data in the Neon database
+    const result = await sql`
+      INSERT INTO form_submissions (
+        drive_link, 
+        full_name, 
+        email, 
+        phone, 
+        address, 
+        album_style, 
+        page_count
+      ) VALUES (
+        ${formData.driveLink}, 
+        ${formData.fullName}, 
+        ${formData.email}, 
+        ${formData.phone}, 
+        ${formData.address}, 
+        ${formData.albumStyle || null}, 
+        ${formData.pageCount || null}
+      )
+      RETURNING id
+    `;
     
-    // For now, we'll just log the data and return success
-    console.log('Form submission received:', formData);
+    // Log that the data was saved successfully
+    console.log('Form submission saved to database with ID:', result[0].id);
     
     // Return success response
     return res.status(200).json({ 
       message: 'Form submitted successfully',
+      submissionId: result[0].id,
       data: formData
     });
   } catch (error) {
