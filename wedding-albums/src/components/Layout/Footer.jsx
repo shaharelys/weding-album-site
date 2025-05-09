@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
+import AlbumaLogo from '/images/logo.png'; // Import logo directly
 
 const FooterContainer = styled.footer`
   background-color: #333;
@@ -17,9 +18,9 @@ const FooterContent = styled.div`
 `;
 
 const LogoContainer = styled.div`
-  display: flex;
-  justify-content: flex-end; /* Aligns to the right in RTL */
+  text-align: right;
   margin-bottom: 30px;
+  display: block;
 `;
 
 const LogoImage = styled.img`
@@ -122,7 +123,7 @@ const Footer = () => {
     <FooterContainer>
       <FooterContent>
         <LogoContainer>
-          <LogoImage src="/images/logo.png" alt="Albuma" />
+          <LogoImage src={AlbumaLogo} alt="Albuma" />
         </LogoContainer>
         <FooterGrid>
           <FooterSection>
