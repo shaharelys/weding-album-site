@@ -22,15 +22,6 @@ const LogoContainer = styled.div`
   display: block;
 `;
 
-const LogoImage = styled.img`
-  height: 90px;
-  width: auto;
-  filter: brightness(0) invert(1); /* Makes the logo white for better visibility */
-  object-fit: cover;
-  object-position: center 40%;
-  margin-top: -10px;
-`;
-
 const FooterGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
