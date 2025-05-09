@@ -24,8 +24,10 @@ const LogoContainer = styled.div`
 `;
 
 const LogoImage = styled.img`
-  height: 60px;
+  height: 80px; /* Increased size from 60px to 80px */
   width: auto;
+  /* Apply filters to create a white version of the logo */
+  filter: brightness(0) invert(1);
 `;
 
 const FooterGrid = styled.div`
