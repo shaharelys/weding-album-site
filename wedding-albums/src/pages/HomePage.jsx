@@ -15,6 +15,9 @@ const HeroSection = styled.div`
   background-color: #f8f4f0;
   padding: 80px 0;
   direction: rtl;
+  @media (max-width: 768px) {
+    padding: 80px 0 0; // Remove bottom padding on mobile
+  }
 `;
 
 const ContentContainer = styled.div`
@@ -71,6 +74,9 @@ const VideoElement = styled.video`
   top: 0;
   left: 0;
   border-radius: 8px;
+  @media (max-width: 768px) {
+    border-radius: 0; // Sharp corners for video element on mobile
+  }
 `;
 
 const Title = styled.h1`
