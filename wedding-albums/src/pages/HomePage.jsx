@@ -16,7 +16,7 @@ const HeroSection = styled.div`
   padding: 80px 0;
   direction: rtl;
   @media (max-width: 768px) {
-    padding: 80px 0 0; // Remove bottom padding on mobile
+    padding: 20px 0 0; // Reduced top padding for mobile
   }
 `;
 
@@ -59,7 +59,7 @@ const VideoContainer = styled.div`
   @media (max-width: 768px) {
     width: 100%;
     max-width: none; // Remove the max-width restriction for mobile
-    margin: 30px 0 0;
+    margin: 20px 0 0; // Reduced top margin for mobile
     flex: none; 
     border-radius: 0; // Optional: remove border-radius if it's full width
     box-shadow: none; // Optional: remove box-shadow if it's full width
@@ -104,6 +104,10 @@ const Subtitle = styled.p`
   line-height: 1.5;
   color: #555;
   text-align: right;
+  @media (max-width: 768px) {
+    font-size: 18px; // Slightly reduce font size for mobile
+    margin-bottom: 20px; // Reduced bottom margin for mobile
+  }
 `;
 
 const CTAButton = styled.button`

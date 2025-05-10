@@ -302,16 +302,23 @@ const DriveForm = ({ onSubmit, pageCount }) => {
               <ProcessSteps>
                 <ProcessStep>
                   <StepNumber>1</StepNumber>
-                  <StepText>בחירת סגנון וגודל אלבום</StepText>
+                  <StepText>בחירת התמונות</StepText>
                   <StepDescription>
-                    בחרו את סגנון האלבום המועדף עליכם מתוך מספר עיצובים, ואת כמות העמודים הרצויה. כל עמוד כולל בממוצע 3 תמונות.
+                    תוך 7 ימי עסקים תקבלו קישור לגלריה עם התמונות הנבחרות + תמונות חלופיות מומלצות
                   </StepDescription>
                 </ProcessStep>
                 <ProcessStep>
                   <StepNumber>2</StepNumber>
+                  <StepText>שליטה מלאה</StepText>
+                  <StepDescription>
+                    תוכלו לסדר את התמונות באלבום בקלות - פשוט גררו ושחררו כדי לראות מיד איך ייראה האלבום המושלם שלכם
+                  </StepDescription>
+                </ProcessStep>
+                <ProcessStep>
+                  <StepNumber>3</StepNumber>
                   <StepText>אישור והדפסה</StepText>
                   <StepDescription>
-                    רק לאחר אישורכם הסופי, האלבום יודפס ויישלח לכתובתכם תוך 10 ימי עסקים
+                    רק לאחר אישורכם הסופי, האלבום יודפס ויישלח לכתובתכם תוך 7 ימי עסקים
                   </StepDescription>
                 </ProcessStep>
               </ProcessSteps>
