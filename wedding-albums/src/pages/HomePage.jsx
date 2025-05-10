@@ -28,6 +28,7 @@ const ContentContainer = styled.div`
   
   @media (max-width: 768px) {
     flex-direction: column;
+    width: 100%; // Allow content container to be full width on mobile
   }
 `;
 
@@ -36,6 +37,11 @@ const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  @media (max-width: 768px) {
+    padding: 0 20px; // Add padding to the text container on mobile
+    width: 100%; // Ensure it takes up available width for padding to apply correctly
+    box-sizing: border-box; // Include padding in the element's total width and height
+  }
 `;
 
 const VideoContainer = styled.div`
@@ -48,9 +54,12 @@ const VideoContainer = styled.div`
   aspect-ratio: 16 / 9;
   
   @media (max-width: 768px) {
-    width: 70%; // Explicitly set width for mobile
-    margin: 30px auto 0;
-    flex: none; // Reset flex behavior from desktop for column layout
+    width: 100%;
+    max-width: none; // Remove the max-width restriction for mobile
+    margin: 30px 0 0;
+    flex: none; 
+    border-radius: 0; // Optional: remove border-radius if it's full width
+    box-shadow: none; // Optional: remove box-shadow if it's full width
   }
 `;
 
