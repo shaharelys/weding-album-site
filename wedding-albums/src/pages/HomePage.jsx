@@ -45,11 +45,12 @@ const VideoContainer = styled.div`
   border-radius: 8px;
   overflow: hidden;
   position: relative;
-  aspect-ratio: 16 / 9; /* Add fixed aspect ratio */
+  aspect-ratio: 16 / 9;
   
   @media (max-width: 768px) {
-    max-width: 70%;
+    width: 70%; // Explicitly set width for mobile
     margin: 30px auto 0;
+    flex: none; // Reset flex behavior from desktop for column layout
   }
 `;
 
