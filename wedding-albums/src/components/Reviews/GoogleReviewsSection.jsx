@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
-import { GoogleLogo, AvatarPlaceholder } from '../../utils/ImagePlaceholders';
+import { AvatarPlaceholder } from '../../utils/ImagePlaceholders';
 
 const ReviewsContainer = styled.div`
   background-color: #f8f9fa;
@@ -57,51 +57,6 @@ const ReviewsSubtitle = styled.p`
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
-`;
-
-const GoogleRatingContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 40px;
-  background-color: white;
-  padding: 15px 30px;
-  border-radius: 50px;
-  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
-  display: inline-flex;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-  }
-`;
-
-const GoogleLogoContainer = styled.div`
-  margin-left: 15px;
-`;
-
-const StarRating = styled.div`
-  display: flex;
-  align-items: center;
-`;
-
-const Stars = styled.div`
-  color: #fbbc05;
-  font-size: 24px;
-  margin-left: 10px;
-`;
-
-const RatingValue = styled.span`
-  font-size: 24px;
-  font-weight: bold;
-  margin-left: 5px;
-`;
-
-const ReviewCount = styled.span`
-  font-size: 16px;
-  color: #555;
-  margin-right: 10px;
 `;
 
 const ReviewsGrid = styled.div`
@@ -327,19 +282,6 @@ const GoogleReviewsSection = () => {
         <ReviewsSubtitle>
           הנה כמה דברים ששמענו מלקוחות שכבר הזמינו אצלנו אלבום
         </ReviewsSubtitle>
-        
-        {/* <GoogleRatingContainer>
-          <GoogleLogoContainer aria-label="Google Logo">
-            <GoogleLogo />
-          </GoogleLogoContainer>
-          <StarRating>
-            <Stars aria-label="דירוג 5 מתוך 5 כוכבים">★★★★★</Stars>
-            <RatingValue>4.9</RatingValue>
-          </StarRating>
-          <ReviewCount>
-            (35 {t('reviews.reviewCount')})
-          </ReviewCount>
-        </GoogleRatingContainer> */}
         
         <ReviewsGrid>
           {displayedReviews.map(review => (
