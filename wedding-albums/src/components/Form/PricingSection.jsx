@@ -178,8 +178,6 @@ const PricingSection = ({ albumStyle, pageCount, allowedPageCounts = [30, 50, 70
     onPageCountChange(count);
   };
   
-  const pricing = albumPricing[albumStyle] || albumPricing.basic;
-  
   return (
     <Container>
       <Row>
