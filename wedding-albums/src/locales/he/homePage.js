@@ -81,15 +81,11 @@ const homePageText = {
   // Contact Section
   'contact': {
     'title': 'צור קשר',
-    'text': 'יש לכם שאלות? אנחנו כאן בשבילכם! צרו איתנו קשר בכל דרך שנוחה לכם.',
+    'text': 'יש לכם שאלות? אנחנו כאן בשבילכם!',
     'methods': {
       'whatsapp': {
         'name': 'וואטסאפ',
         'info': '054-466-6185'
-      },
-      'email': {
-        'name': 'דוא"ל',
-        'info': 'info@wedding-albums.co.il'
       },
       'hours': {
         'name': 'שעות פעילות',

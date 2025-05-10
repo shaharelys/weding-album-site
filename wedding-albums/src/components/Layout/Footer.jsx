@@ -158,12 +158,12 @@ const Footer = () => {
           
           <FooterSection>
             <FooterSectionTitle>צור קשר</FooterSectionTitle>
-            <ContactItem>
+            {/* <ContactItem>
               <ContactIcon>
                 <i className="fas fa-envelope"></i>
               </ContactIcon>
               <ContactText>{t('footer.email')}: info@albuma.co.il</ContactText>
-            </ContactItem>
+            </ContactItem> */}
             <ContactItem>
               <ContactIcon>
                 <i className="fab fa-whatsapp"></i>

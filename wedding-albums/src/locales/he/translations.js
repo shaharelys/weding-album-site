@@ -1,3 +1,6 @@
+import termsOfServiceText from './termsOfService';
+import privacyPolicyText from './privacyPolicy';
+
 const translations = {
   // Header
   'site.name': 'Albuma',
@@ -96,6 +99,10 @@ const translations = {
   'footer.contact': 'צור קשר',
   'footer.email': 'דוא"ל',
   'footer.whatsapp': 'וואטסאפ',
+
+  // Namespaced translations
+  terms: termsOfServiceText,
+  privacy: privacyPolicyText,
 };
 
 export default translations;

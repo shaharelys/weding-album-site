@@ -512,7 +512,7 @@ const HomePage = () => {
       <ContactSection id="contact-section">
         <ContactContainer>
           <ContactTitle>{t('nav.contact')}</ContactTitle>
-          <ContactText>יש לכם שאלות? אנחנו כאן בשבילכם! צרו איתנו קשר בכל דרך שנוחה לכם.</ContactText>
+          <ContactText>יש לכם שאלות? אנחנו כאן בשבילכם!</ContactText>
           
           <ContactMethods>
             <ContactMethod>
@@ -527,7 +527,7 @@ const HomePage = () => {
               </ContactDetails>
             </ContactMethod>
             
-            <ContactMethod>
+            {/* <ContactMethod>
               <ContactIcon color="#4285F4">
                 <i className="far fa-envelope"></i>
               </ContactIcon>
@@ -537,7 +537,7 @@ const HomePage = () => {
                   <ContactLink href="mailto:info@wedding-albums.co.il">info@wedding-albums.co.il</ContactLink>
                 </ContactInfo>
               </ContactDetails>
-            </ContactMethod>
+            </ContactMethod> */}
             
             <ContactMethod>
               <ContactIcon color="#333">
