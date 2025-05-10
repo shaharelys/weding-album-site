@@ -128,27 +128,27 @@ const SatisfactionGuarantee = styled.div`
 const albumPricing = {
   leather: {
     name: 'אלבום עור',
-    basePrice: 649,
+    basePrice: 699,
     additionalPagePrice: 20,
-    priceFor30Pages: 649, // Base price already includes 30 pages
-    priceFor50Pages: 649 + (20 * 20), // Base plus 20 additional pages
-    priceFor70Pages: 649 + (40 * 20), // Base plus 40 additional pages
+    priceFor30Pages: 699, // Base price already includes 30 pages
+    priceFor50Pages: 699 + (20 * 10), // Base plus 20 additional pages
+    priceFor70Pages: 699 + (40 * 10), // Base plus 40 additional pages
   },
   linen: {
     name: 'אלבום פשתן',
     basePrice: 599,
     additionalPagePrice: 18,
     priceFor30Pages: 599, // Base price already includes 30 pages
-    priceFor50Pages: 599 + (20 * 18), // Base plus 20 additional pages
-    priceFor70Pages: 599 + (40 * 18), // Base plus 40 additional pages
+    priceFor50Pages: 599 + (20 * 10), // Base plus 20 additional pages
+    priceFor70Pages: 599 + (40 * 10), // Base plus 40 additional pages
   },
   basic: {
-    name: 'אלבום פשוט',
+    name: 'אלבום קלאסי',
     basePrice: 499,
     additionalPagePrice: 15,
     priceFor30Pages: 499, // Base price already includes 30 pages
-    priceFor50Pages: 499 + (20 * 15), // Base plus 20 additional pages
-    priceFor70Pages: 499 + (40 * 15), // Base plus 40 additional pages
+    priceFor50Pages: 499 + (20 * 10), // Base plus 20 additional pages
+    priceFor70Pages: 499 + (40 * 10), // Base plus 40 additional pages
   }
 };
 

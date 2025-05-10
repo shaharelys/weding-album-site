@@ -217,10 +217,10 @@ const DriveForm = ({ onSubmit, pageCount }) => {
 
   return (
     <FormContainer>
-      <InfoBox>
-        <InfoTitle>אין צורך לבחור - אנחנו עושים זאת עבורכם</InfoTitle>
-        <InfoText>צוות העורכים שלנו יבחר את התמונות הטובות ביותר מהאוסף שלכם ויעצב עבורכם אלבום מושלם.</InfoText>
-        <InfoText>אנו נבחר כ-{estimatedPhotos} תמונות מרהיבות עבור האלבום שלכם, בהתאם למספר העמודים שבחרתם.</InfoText>
+        <InfoBox>
+        <InfoTitle>הצעת אלבום מוכנה - עם אפשרות לשינויים בקלות</InfoTitle>
+        <InfoText>נבחר בקפידה כ-{estimatedPhotos} תמונות מרהיבות מהאוסף שלכם ונעצב עבורכם אלבום ראשוני, בהתאם למספר העמודים שבחרתם.</InfoText>
+        <InfoText> לאחר הבחירה הראשונית, תקבלו גישה לאלבום הדיגיטלי המוכן ולצדו גלריה נוספת עם כ-{estimatedPhotos*3} תמונות שהתלבטנו לגביהן. באמצעות ממשק פשוט וידידותי, תוכלו לגרור ולהחליף תמונות מהגלריה אל האלבום בקלות.</InfoText>
         <LimitNotice>ניתן להעלות עד 5000 תמונות בסך הכל</LimitNotice>
       </InfoBox>
       
@@ -302,23 +302,16 @@ const DriveForm = ({ onSubmit, pageCount }) => {
               <ProcessSteps>
                 <ProcessStep>
                   <StepNumber>1</StepNumber>
-                  <StepText>בחירת התמונות</StepText>
+                  <StepText>בחירת סגנון וגודל אלבום</StepText>
                   <StepDescription>
-                    תוך 7 ימי עסקים תקבלו קישור לגלריה עם התמונות הנבחרות + תמונות חלופיות מומלצות
+                    בחרו את סגנון האלבום המועדף עליכם מתוך מספר עיצובים, ואת כמות העמודים הרצויה. כל עמוד כולל בממוצע 3 תמונות.
                   </StepDescription>
                 </ProcessStep>
                 <ProcessStep>
                   <StepNumber>2</StepNumber>
-                  <StepText>שליטה מלאה</StepText>
-                  <StepDescription>
-                    תוכלו לסדר את התמונות באלבום בקלות - פשוט גררו ושחררו כדי לראות מיד איך ייראה האלבום המושלם שלכם
-                  </StepDescription>
-                </ProcessStep>
-                <ProcessStep>
-                  <StepNumber>3</StepNumber>
                   <StepText>אישור והדפסה</StepText>
                   <StepDescription>
-                    רק לאחר אישורכם הסופי, האלבום יודפס ויישלח לכתובתכם תוך 7 ימי עסקים
+                    רק לאחר אישורכם הסופי, האלבום יודפס ויישלח לכתובתכם תוך 10 ימי עסקים
                   </StepDescription>
                 </ProcessStep>
               </ProcessSteps>

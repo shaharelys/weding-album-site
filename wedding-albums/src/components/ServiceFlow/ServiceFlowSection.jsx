@@ -65,36 +65,26 @@ const ServiceFlowSection = () => {
   const steps = [
     {
       id: 1,
-      title: 'בחירת סגנון אלבום',
-      description: t('flow.step1')
+      title: 'בחירת סגנון וגודל אלבום',
+      description: "בחרו את סגנון האלבום המועדף עליכם מתוך מספר עיצובים, ואת כמות העמודים הרצויה. כל עמוד כולל בממוצע 3 תמונות."
     },
     {
       id: 2,
-      title: 'בחירת גודל אלבום',
-      description: t('flow.step2')
-    },
-    {
-      id: 3,
       title: 'שיתוף קישור לתמונות ופרטי התקשרות',
       description: t('flow.step3')
     },
     {
-      id: 4,
+      id: 3,
       title: 'תשלום ואישור תנאים',
       description: t('flow.step4')
     },
     {
+      id: 4,
+      title: 'בחירת התמונות ועיצוב האלבום',
+      description: "תוך 7 ימי עסקים תקבלו לינק לאלבום הדיגיטלי עם התמונות הנבחרות, לצד גלריה של תמונות חלופיות. תוכלו בקלות לגרור ולהחליף תמונות לפי טעמכם האישי, ולאשר את התצורה הסופית של האלבום."
+    },
+    {
       id: 5,
-      title: 'בחירת התמונות',
-      description: t('flow.step5')
-    },
-    {
-      id: 6,
-      title: 'עיצוב האלבום ואישור',
-      description: t('flow.step6')
-    },
-    {
-      id: 7,
       title: 'קבלת האלבום',
       description: t('flow.step7')
     }
