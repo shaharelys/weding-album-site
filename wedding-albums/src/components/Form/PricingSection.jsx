@@ -93,13 +93,6 @@ const PriceContainer = styled.div`
   border-radius: 10px;
 `;
 
-const PriceBefore = styled.div`
-  text-decoration: line-through;
-  color: #999;
-  font-size: 16px;
-  margin-bottom: 5px;
-`;
-
 const CurrentPrice = styled.div`
   font-size: 30px;
   color: #9c6644;
@@ -209,9 +202,6 @@ const PricingSection = ({ albumStyle, pageCount, allowedPageCounts = [30, 50, 70
         </Column>
         <Column>
           <PriceContainer>
-            {pageCount > 30 ? (
-              <PriceBefore>{pricing.priceFor30Pages} ₪</PriceBefore>
-            ) : null}
             <CurrentPrice>{totalPrice} ₪</CurrentPrice>
             <PriceNote>כולל הדפסה ומשלוח</PriceNote>
           </PriceContainer>

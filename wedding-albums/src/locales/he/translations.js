@@ -6,7 +6,7 @@ const translations = {
   'site.name': 'Albuma',
   'site.tagline': 'הדרך הקלה אל אלבום החתונה שלכם',
   'site.subtitle': 'שירות חדשני שמסנן עבורכם עד 5000 תמונות מהחתונה, בוחר את הרגעים היפים ביותר ומפיק מהם אלבום פיזי מעוצב שנשלח לביתכם.',
-  'site.ctaButton': 'התחילו עכשיו – בחרו סגנון אלבום',
+  'site.ctaButton': 'בחרו אלבום עכשיו',
   
   // Problem + Story Section
   'story.title': 'התמונות מהחתונה מחכות?',
