@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import styled from 'styled-components';
 import Header from './components/Layout/Header';
 import Footer from './components/Layout/Footer';
+import FloatingWhatsAppButton from './components/Layout/WhatsAppButton';
 import HomePage from './pages/HomePage';
 import AdminPage from './pages/AdminPage';
 import PrivacyPolicy from './pages/PrivacyPolicy';
@@ -33,6 +34,7 @@ function App() {
           <Route path="/success" element={<SuccessPage />} />
         </Routes>
       </MainContent>
+      <FloatingWhatsAppButton />
       <Footer />
     </AppContainer>
   );

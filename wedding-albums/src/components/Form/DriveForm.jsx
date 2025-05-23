@@ -238,21 +238,6 @@ const DriveForm = ({ onSubmit, pageCount }) => {
         {({ isSubmitting }) => (
           <Form>
             <FormGroup>
-              <Label htmlFor="driveLink">{t('form.driveLink.label')}</Label>
-              <Input 
-                type="text" 
-                id="driveLink" 
-                name="driveLink" 
-                placeholder="https://drive.google.com/drive/folders/..."
-              />
-              <Instructions>
-                יש להעלות את כל התמונות ל-Google Drive ולשתף אותן עם הרשאת צפייה לכל מי שיש לו את הקישור.
-                העתיקו את הקישור לתיבה למעלה.
-              </Instructions>
-              <ErrorMessage name="driveLink" component={ErrorText} />
-            </FormGroup>
-
-            <FormGroup>
               <Label htmlFor="fullName">שם מלא</Label>
               <Input 
                 type="text" 
@@ -295,6 +280,21 @@ const DriveForm = ({ onSubmit, pageCount }) => {
                 placeholder="הזן כתובת מלאה למשלוח האלבום"
               />
               <ErrorMessage name="address" component={ErrorText} />
+            </FormGroup>
+
+            <FormGroup>
+              <Label htmlFor="driveLink">{t('form.driveLink.label')}</Label>
+              <Input 
+                type="text" 
+                id="driveLink" 
+                name="driveLink" 
+                placeholder="https://drive.google.com/drive/folders/..."
+              />
+              <Instructions>
+                יש להעלות את כל התמונות ל-Google Drive ולשתף אותן עם הרשאת צפייה לכל מי שיש לו את הקישור, או רק עבור share@albuma.co.il.
+                העתיקו את הקישור לתיבה למעלה.
+              </Instructions>
+              <ErrorMessage name="driveLink" component={ErrorText} />
             </FormGroup>
             
             <TransparentProcess>
